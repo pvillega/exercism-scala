@@ -1,0 +1,17 @@
+[0m[[0minfo[0m] [0m[32mBobSpecs:[0m[0m
+[0m[[0minfo[0m] [0m[32m- should respond to a statement[0m[0m
+[0m[[0minfo[0m] [0m[32m- should respond to shouting[0m[0m
+[0m[[0minfo[0m] [0m[32m- should respond to questions[0m[0m
+[0m[[0minfo[0m] [0m[32m- should allow questions to end with numbers[0m[0m
+[0m[[0minfo[0m] [0m[32m- should respond to talking forcefully[0m[0m
+[0m[[0minfo[0m] [0m[32m- should allow acroynms in regular speech[0m[0m
+[0m[[0minfo[0m] [0m[32m- should see forceful questions as shouting[0m[0m
+[0m[[0minfo[0m] [0m[32m- should allow numbers when shouting[0m[0m
+[0m[[0minfo[0m] [0m[32m- should see only numbers as speech[0m[0m
+[0m[[0minfo[0m] [0m[32m- should respond to questions with only numbers[0m[0m
+[0m[[0minfo[0m] [0m[32m- should respond to shouting with no exclamation mark[0m[0m
+[0m[[0minfo[0m] [0m[32m- should respond to statements with ? in the middle[0m[0m
+[0m[[0minfo[0m] [0m[32m- should respond to prattling on[0m[0m
+[0m[[0minfo[0m] [0m[32m- should respond to silence[0m[0m
+[0m[[0minfo[0m] [0m[32m- should respond to prolonged silence[0m[0m
+[0m[[0minfo[0m] [0m[32m- should respond to multiple line questions[0m[0m
