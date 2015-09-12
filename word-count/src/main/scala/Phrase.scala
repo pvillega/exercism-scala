@@ -13,7 +13,7 @@ class Phrase(sentence: String) {
     phrase
       .split(spaces)
       .groupBy(s => s)
-      .map { case (k, v) => (k, v.length) }
+      .mapValues(_.length)
 
   lazy val wordCount: Map[String, Int] = countWords(cleanSentence(sentence))
 }
