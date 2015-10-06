@@ -1,93 +1,24 @@
 object House {
-  //what's the point of spending cycles doing an overly complicated recursive function
-  //when you have a static solution? Sorry, find the exercise silly
-  def rhyme: String = s"""This is the house that Jack built.
-                        |
-                        |This is the malt
-                        |that lay in the house that Jack built.
-                        |
-                        |This is the rat
-                        |that ate the malt
-                        |that lay in the house that Jack built.
-                        |
-                        |This is the cat
-                        |that killed the rat
-                        |that ate the malt
-                        |that lay in the house that Jack built.
-                        |
-                        |This is the dog
-                        |that worried the cat
-                        |that killed the rat
-                        |that ate the malt
-                        |that lay in the house that Jack built.
-                        |
-                        |This is the cow with the crumpled horn
-                        |that tossed the dog
-                        |that worried the cat
-                        |that killed the rat
-                        |that ate the malt
-                        |that lay in the house that Jack built.
-                        |
-                        |This is the maiden all forlorn
-                        |that milked the cow with the crumpled horn
-                        |that tossed the dog
-                        |that worried the cat
-                        |that killed the rat
-                        |that ate the malt
-                        |that lay in the house that Jack built.
-                        |
-                        |This is the man all tattered and torn
-                        |that kissed the maiden all forlorn
-                        |that milked the cow with the crumpled horn
-                        |that tossed the dog
-                        |that worried the cat
-                        |that killed the rat
-                        |that ate the malt
-                        |that lay in the house that Jack built.
-                        |
-                        |This is the priest all shaven and shorn
-                        |that married the man all tattered and torn
-                        |that kissed the maiden all forlorn
-                        |that milked the cow with the crumpled horn
-                        |that tossed the dog
-                        |that worried the cat
-                        |that killed the rat
-                        |that ate the malt
-                        |that lay in the house that Jack built.
-                        |
-                        |This is the rooster that crowed in the morn
-                        |that woke the priest all shaven and shorn
-                        |that married the man all tattered and torn
-                        |that kissed the maiden all forlorn
-                        |that milked the cow with the crumpled horn
-                        |that tossed the dog
-                        |that worried the cat
-                        |that killed the rat
-                        |that ate the malt
-                        |that lay in the house that Jack built.
-                        |
-                        |This is the farmer sowing his corn
-                        |that kept the rooster that crowed in the morn
-                        |that woke the priest all shaven and shorn
-                        |that married the man all tattered and torn
-                        |that kissed the maiden all forlorn
-                        |that milked the cow with the crumpled horn
-                        |that tossed the dog
-                        |that worried the cat
-                        |that killed the rat
-                        |that ate the malt
-                        |that lay in the house that Jack built.
-                        |
-                        |This is the horse and the hound and the horn
-                        |that belonged to the farmer sowing his corn
-                        |that kept the rooster that crowed in the morn
-                        |that woke the priest all shaven and shorn
-                        |that married the man all tattered and torn
-                        |that kissed the maiden all forlorn
-                        |that milked the cow with the crumpled horn
-                        |that tossed the dog
-                        |that worried the cat
-                        |that killed the rat
-                        |that ate the malt
-                        |that lay in the house that Jack built.\n\n""".stripMargin
+
+  private val house = ("house that Jack built.", "")
+  private val malt = ("malt", "lay in")
+  private val rat = ("rat", "ate")
+  private val cat = ("cat", "killed")
+  private val dog = ("dog", "worried")
+  private val cow = ("cow with the crumpled horn", "tossed")
+  private val maiden = ("maiden all forlorn", "milked")
+  private val man = ("man all tattered and torn", "kissed")
+  private val priest = ("priest all shaven and shorn", "married")
+  private val rooster = ("rooster that crowed in the morn", "woke")
+  private val farmer = ("farmer sowing his corn", "kept")
+  private val horse = ("horse and the hound and the horn", "belonged to")
+
+  private val items = List(house, malt, rat, cat, dog, cow, maiden, man, priest, rooster, farmer, horse)
+
+  def rhyme: String = items.zipWithIndex.map { case (item, i) => s"This is the ${section(item, i)}" }.mkString("", "\n", "\n")
+
+  private def section(element: (String, String), position: Int): String = {
+    val recurse = if (position > 0) s"that ${element._2} the ${section(items(position - 1), position - 1)}" else ""
+    s"${element._1}\n$recurse"
+  }
 }
