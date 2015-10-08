@@ -1,0 +1,29 @@
+# Pascals Triangle
+
+Write a program that computes Pascal's triangle up to a given number of rows.
+
+In Pascal's Triangle each number is computed by adding the numbers to
+the right and left of the current position in the previous row.
+
+```plain
+    1
+   1 1
+  1 2 1
+ 1 3 3 1
+1 4 6 4 1
+# ... etc
+```
+
+The Scala exercises assume an SBT project scheme. The exercise solution source
+should be placed within the exercise directory/src/main/scala. The exercise
+unit tests can be found within the exercise directory/src/test/scala.
+
+To run the tests simply run the command `sbt test` in the exercise directory.
+
+For more detailed info about the Scala track see the [help
+page](http://help.exercism.io/getting-started-with-scala.html).
+
+
+## Source
+
+Pascal's Triangle at Wolfram Math World [view source](http://mathworld.wolfram.com/PascalsTriangle.html)
